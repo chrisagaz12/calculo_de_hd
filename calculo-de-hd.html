@@ -1,0 +1,139 @@
+﻿
+<html>
+  <head>
+	<link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chrisagaz12/qwe@master/style.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="js.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<img src="https://cdn.jsdelivr.net/gh/chrisagaz12/qwe@master/icon_hd.png" height="100" style="padding-top: 5px;">
+			<div class="col color-text" style="padding-top: 20px">Calculo de HD</div>
+		</div>
+		<br>
+
+	<div class="row">
+		<div class="col-8">
+				<div class="container-fluid bar">
+				<div class="text-cftv row space2"><div class="text-center container">Dispositivo 1</div></div>
+					<div class="row">
+						<div class="col text-center">
+							<div class="">
+								<div class="row">
+									<div class="col">
+										<h5 class="color-text2">Câmeras</h5>
+										<input type="number" class="form-control text-center" id="canal" placeholder="Número de canais">
+
+									</div>
+									<div class="col">
+										<h5 class="color-text2">Bitrate</h5>
+										<input type="number" class="form-control text-center" id="bitrate" placeholder="Valor do bitrate">
+									</div>
+									<div class="col">
+										<h5 class="color-text2">Horas por dia</h5>
+										<select class="form-control" id="horas">
+ 											<option value="24" selected>24</option>
+											<option value="23">23</option>
+											<option value="22">22</option>
+											<option value="21">21</option>
+											<option value="20">20</option>
+											<option value="19">19</option>
+											<option value="18">18</option>
+											<option value="17">17</option>
+											<option value="16">16</option>
+											<option value="15">15</option>
+											<option value="14">14</option>
+											<option value="13">13</option>
+											<option value="12">12</option>
+											<option value="11">11</option>
+											<option value="10">10</option>
+											<option value="9">9</option>
+											<option value="8">8</option>
+											<option value="7">7</option>
+											<option value="6">6</option>
+											<option value="5">5</option>
+											<option value="4">4</option>
+											<option value="3">3</option>
+											<option value="2">2</option>
+											<option value="1">1</option>
+										</select>
+									</div>
+									<div class="col">
+										<h5 class="color-text2">Dias</h5>
+										<input type="number" class="form-control text-center" id="dias" placeholder="Quantidade de dias">
+									</div>
+								</div>
+								<div style="padding-top: 9px;">
+									<button type="button" class="btn button" onClick="limpar()">Limpar</button>
+									<button type="button" class="btn button" onClick="calculoHd()">Calcular</button>
+								</div>
+							</div>
+							<h5></h5>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		
+		<div class="col-4">
+		  <div class="container-fluid bar">
+				<div class="text-cftv row space2"><div class="text-center container">Consumo 1</div></div>
+					<div class="row">
+						<div class="col text-center inside-text" style="margin: 5px;">
+							<h5 class="color-text2">Hora</h5>
+							<div class="row color-text2">
+							<!--	<h6 class="col-8" id="horasemMb"></h6> 
+								<h6 class="col-4">MB</h6> -->
+								
+							  <h6 class="col-8" id="horasemGb"></h6>
+								<h6 class="col-4">GB</h6>
+								
+							  <h6 class="col-8" id="horasemTb"></h6>
+								<h6 class="col-4">TB</h6>								
+							</div>
+					  	</div>
+						<div class="col text-center inside-text" style="margin: 5px;">
+							<h5 class="color-text2">Dia</h5>
+							<div class="row color-text2">
+							<!--	<h6 class="col-8" id="diasemMb"></h6>
+								<h6 class="col-4">MB</h6> -->
+								
+								<h6 class="col-8" id="diasemGb"></h6>
+								<h6 class="col-4">GB</h6>
+								
+								<h6 class="col-8" id="diasemTb"></h6>
+								<h6 class="col-4">TB</h6>								
+							</div>
+							
+					  	</div>
+						<div class="col text-center inside-text" style="margin: 5px;">
+							<h5 class="color-text2">Total</h5>
+							<div class="row color-text2">
+							<!--	<h6 class="col-8" id="totalemMb"></h6>
+								<h6 class="col-4">MB</h6> -->
+								
+								<h6 class="col-8" id="totalemGb"></h6>
+								<h6 class="col-4">GB</h6>
+								
+								<h6 class="col-8" id="totalemTb"></h6>
+								<h6 class="col-4">TB</h6>							
+							</div>
+					  	</div>
+					</div><br>
+		  </div>
+		</div>
+		</div>
+
+
+</body>
+</html>
